@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Demo</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div id="demo">
+			<div class=""> 
+				<h2>Thêm mới được {{ infors.length }} User</h2>
+				<form @submit="addUser">
+					<div class="form-group">
+						<label for="name">Tên</label>
+						<input v-model="newUser" type="text" class="form-control" id="name">
+					</div>
+					<div class="form-group">
+						<label for="age">Tuổi:</label>
+						<input v-model="newAge" type="text" class="form-control" id="age">
+					</div>
+					<button type="submit" class="btn btn-primary">Thêm</button>
+				</form>
+				<div class="ed-tale">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Tên</th>
+								<th>Tuổi</th>
+								<th></th>		
+							</tr>
+						</thead>
+
+						<tbody>
+							
+							<tr v-for="(item, index) in infors">
+								<td>{{ item.id }}</td>
+								<td>{{item.name}} </td>
+								<td>{{item.age}}</td>
+								<td class="ed-btn-ed">
+									<button class="btn btn-success">Edit</button>
+									<button  @click="deletee(index)" class="btn btn-danger">X</button>
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+	<script src="js/vue.js" ></script>
+</body>
+</html>
